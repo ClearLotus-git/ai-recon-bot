@@ -18,3 +18,19 @@ cd ai-recon-bot
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
+
+## How to Run
+
+```bash
+python3 main.py
+
+[*] Enter daomainor IP: 
+```
+
+
+
+
+
+
+
