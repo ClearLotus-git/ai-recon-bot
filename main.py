@@ -5,6 +5,7 @@ from modules.gpt_summarizer import summarize_recon
 from dotenv import load_dotenv
 from pyfiglet import figlet_format
 from colorama import Fore, Style
+from datetime import datetime
 import os
 import json
 
@@ -48,6 +49,21 @@ def main():
     summary = summarize_recon(json.dumps(recon_data, indent=2))
     print(Fore.GREEN + "\n=== AI Recon Summary ===\n" + Style.RESET_ALL)
     print(summary)
+
+        report = {
+        "timestamp": datetime.now().isoformat(),
+        "target": target,
+        "subdomains": subdomains,
+        "ports": port_results,
+        "shodan": shodan_results,
+        "ai_summary": summary
+    }
+
+    filename = f"recon_report_{target.replace('.', '_')}.json"
+    with open(filename, "w") as f:
+        json.dump(report, f, indent=2)
+
+    print(Fore.CYAN + f"\n[+] Report saved to {filename}" + Style.RESET_ALL)
 
 if __name__ == "__main__":
     main()
