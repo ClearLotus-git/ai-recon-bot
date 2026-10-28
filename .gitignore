@@ -7,3 +7,7 @@ venv/
 
 # Ignore secrets
 .env
+
+# Reports
+reports/
+recon_report_*.json

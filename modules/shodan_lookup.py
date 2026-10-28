@@ -3,6 +3,8 @@ import os
 
 def shodan_search(target):
     api_key = os.getenv("SHODAN_API_KEY")
+    if not api_key:
+        return [{"error": "SHODAN_API_KEY not set, skipped"}]
     api = shodan.Shodan(api_key)
 
     try:
