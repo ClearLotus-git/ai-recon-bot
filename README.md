@@ -1,5 +1,7 @@
 # AI Recon Bot (NS3D Framework)
 
+![CI](https://github.com/ClearLotus-git/ai-recon-bot/actions/workflows/ci.yml/badge.svg)
+
 An AI-powered modular recon tool that automates the enumeration of subdomains, ports, Shodan data, and summarizes it using GPT.
 
 ##  Features
